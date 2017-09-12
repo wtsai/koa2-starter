@@ -1,12 +1,12 @@
-import Koa from 'koa';
-import path from 'path';
-import logger from 'koa-logger';
-import convert from 'koa-convert';
-import koaStatic from 'koa-static';
-import bodyParser from 'koa-bodyparser';
-import Router from 'koa-router';
-import index from './routes/index';
-import users from './routes/users';
+const Koa = require('koa');
+const path = require('path');
+const logger = require('koa-logger');
+const convert = require('koa-convert');
+const koaStatic = require('koa-static');
+const bodyParser = require('koa-bodyparser');
+const Router = require('koa-router');
+const index = require('./routes/index');
+const users = require('./routes/users');
 
 const app = new Koa();
 const router = new Router();
@@ -22,4 +22,3 @@ app.use(convert(logger()))
 
 app.listen(3000, () => console.log('Listening on port 3000.'));
 
-export default app;
